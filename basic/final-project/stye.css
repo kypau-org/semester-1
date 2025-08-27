@@ -1,0 +1,127 @@
+/* === Body === */
+body {
+  margin: 10; /* Hilangkan margin default */
+  font-family: 'Poppins', sans-serif; /* Font utama */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Background gradasi */
+  color: #fff; /* Warna teks */
+}
+
+/* === Navigasi === */
+nav ul {
+  display: flex; /* Membuat menu horizontal */
+  justify-content: center; /* Rata tengah */
+  gap: 30px; /* Jarak antar menu */
+  list-style: none; /* Hilangkan bullet */
+  background: rgba(255, 255, 255, 0.1); /* Efek transparan */
+  backdrop-filter: blur(10px); /* Efek blur (glassmorphism) */
+  padding: 15px 0; /* Ruang atas & bawah */
+  margin: 0; /* Hilangkan margin default */
+  border-radius: 0 0 20px 20px; /* Membulatkan sudut bawah */
+}
+
+nav a {
+  text-decoration: none; /* Hilangkan garis bawah */
+  color: #fff; /* Warna teks */
+  font-weight: bold; /* Teks tebal */
+  transition: color 0.3s, text-shadow 0.3s; /* Efek transisi */
+}
+
+nav a:hover {
+  color: #00f7ff; /* Warna saat hover */
+  text-shadow: 0 0 10px #00f7ff; /* Efek glow */
+}
+
+/* === Header === */
+header {
+  text-align: center; /* Rata tengah konten */
+  padding: 80px 20px; /* Ruang dalam */
+}
+
+/* Foto profil */
+.profil-image {
+  border-radius: 50%; /* Membuat lingkaran */
+  border: 4px solid #00f7ff; /* Border neon */
+  box-shadow: 0 0 20px #00f7ff; /* Efek glow */
+  width: 200px;
+  height: 200px;
+  object-fit: cover; /* Potong gambar sesuai frame */
+  transition: transform 0.3s, box-shadow 0.3s; /* Efek transisi */
+}
+
+.profil-image:hover {
+  transform: scale(1.05); /* Zoom saat hover */
+  box-shadow: 0 0 40px #00f7ff; /* Glow lebih terang */
+}
+
+/* Nama utama */
+h1.i {
+  font-family: 'Lobster', cursive; /* Font dekoratif */
+  font-size: 2.5rem; /* Ukuran besar */
+  margin-top: 20px; /* Jarak atas */
+}
+
+/* === Section utama === */
+.am, .galeri, .cont {
+  margin: 40px auto; /* Tengah dengan jarak luar */
+  padding: 40px; /* Ruang dalam */
+  border-radius: 20px; /* Sudut membulat */
+  background: rgba(255, 255, 255, 0.05); /* Efek transparan */
+  backdrop-filter: blur(10px); /* Efek blur */
+  box-shadow: 0 0 20px rgba(0,0,0,0.3); /* Bayangan */
+  animation: fadeIn 1s ease-in-out; /* Animasi muncul */
+}
+
+/* === Galeri === */
+.f {
+  display: flex; /* Baris gambar */
+  gap: 20px; /* Jarak antar gambar */
+  justify-content: center; /* Tengah */
+  flex-wrap: wrap; /* Bisa turun ke baris berikutnya */
+}
+
+.f img {
+  border-radius: 15px; /* Sudut membulat */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Bayangan */
+  transition: transform 0.3s, box-shadow 0.3s; /* Efek transisi */
+}
+
+.f img:hover {
+  transform: scale(1.05); /* Zoom */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7); /* Bayangan lebih gelap */
+}
+
+/* === Form Kontak === */
+.contact input, .contact textarea, .contact button {
+  width: 100%; /* Lebar penuh */
+  margin-bottom: 15px; /* Jarak bawah */
+  padding: 10px; /* Ruang dalam */
+  border: none; /* Hilangkan border default */
+  border-radius: 8px; /* Sudut membulat */
+  font-size: 1rem; /* Ukuran teks */
+}
+
+.contact button {
+  background: linear-gradient(90deg, #00f7ff, #00ff87); /* Gradasi */
+  color: #000; /* Teks hitam */
+  font-weight: bold; /* Tebal */
+  cursor: pointer; /* Tanda klik */
+}
+
+.contact button:hover {
+  background: linear-gradient(90deg, #00ff87, #00f7ff); /* Balik gradasi */
+}
+
+/* === Footer === */
+footer {
+  text-align: center; /* Tengah */
+  padding: 15px; /* Ruang dalam */
+  background: rgba(255, 255, 255, 0.1); /* Transparan */
+  backdrop-filter: blur(10px); /* Blur */
+  border-radius: 20px 20px 0 0; /* Membulatkan sudut atas */
+}
+
+/* === Animasi Fade In === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

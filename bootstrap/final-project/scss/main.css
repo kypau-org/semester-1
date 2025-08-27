@@ -1,0 +1,15 @@
+nav > div > a > img {
+  height: 40px;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+.wiggle {
+  animation: wiggle 1s infinite ease-in-out;
+}/*# sourceMappingURL=main.css.map */

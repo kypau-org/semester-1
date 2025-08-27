@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Porto Dzaky</title>
+    <link rel="stylesheet" href="./stye.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- navigation button -->
+    <nav>
+      <ul>
+        <li><a href="#about">Tentang Saya</a></li>
+        <li><a href="#galery">gallery</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+
+    <!-- Header -->
+    <header>
+      <img src="images/image1.webp" alt="Foto profil" width="250" height="auto" class="profil-image" />
+      <h1 class="i">Muhammad Dzaky Fauzan</h1>
+      <p class="i">Beginner <br>Web Developer</p>
+    </header>
+
+    <!-- About -->
+    <section class="am" id="about">
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya adalah seorang pengembang web yang bersemangat membangun solusi digital yang berdampak.<br>
+        saya adalah seorang mahasiswa di politeknik IDN dan saya selalu belajar dari apa yang telah para mentor ajarkan kepada saya.
+      </p>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="galeri">
+      <span class="h" id="galery">
+        <h2>MY GALERY</h2>
+      </span>
+      <div class="f">
+        <figure>
+          <img src="images/image2.webp" alt="IMG 1" width="300" />
+          <figcaption>NISSAN GT-R (R35)</figcaption>
+        </figure>
+        <figure>
+          <img src="images/image3.webp" alt="IMG 2" width="300" />
+          <figcaption>HONDA S2000</figcaption>
+        </figure>
+        <figure>
+          <img src="images/image4.webp" alt="IMG 3" width="300" />
+          <figcaption>HONDA CIVIC HATCHBACK</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+     <div class="cont">
+    <section class="contact" id="contact">
+      <h2>Kontak Saya</h2>
+      <form action="#" method="post">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="pesan">Pesan:</label>
+        <textarea id="pesan" name="pesan" rows="5" required></textarea>
+
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Muhammad Dzaky Fauzan. Seluruh hak cipta dilindungi.</p>
+    </footer>
+  </body>
+</html>

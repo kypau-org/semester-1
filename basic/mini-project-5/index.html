@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Gallery</h1>
+    </header>
+
+    <main>
+      <section class="gallery" aria-label="Galeri gambar">
+        <!-- Card 1 -->
+        <article class="card">
+          <a class="img-wrap" href="#" aria-label="Buka gambar 1" tabindex="0">
+            <img src="https://picsum.photos/id/1015/800/500" alt="Pemandangan 1">
+          </a>
+          <div class="body">
+            <h3 class="title">Image 1</h3>
+            <p class="desc">Pemandangan 1.</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <a class="img-wrap" href="#" aria-label="Buka gambar 2" tabindex="0">
+            <img src="https://picsum.photos/id/1016/800/500" alt="Pemandangan 2">
+          </a>
+          <div class="body">
+            <h3 class="title">Image 2</h3>
+            <p class="desc">Pemandangan 2.</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <a class="img-wrap" href="#" aria-label="Buka gambar 3" tabindex="0">
+            <img src="https://picsum.photos/id/1018/800/500" alt="Pemandangan 3">
+          </a>
+          <div class="body">
+            <h3 class="title">Image 3</h3>
+            <p class="desc">Pemandangan 3.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Muhammad Dzaky Fauzan | Mini Project 5
+    </footer>
+  </div>
+
+  <script>
+    // Update tahun di footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Biodata Card</title>
+    <link
+      href="css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="scss/main.css" />
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <img src="images/nav.png" alt="Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#biodata">Biodata</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-light text-dark text-center py-5">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Welcome to My Profile</h1>
+        <p class="lead">
+          Hello! my name is <span class="text-primary">Muhammad Dzaky Fauzan</span><br />I am a beginner web
+          developer.
+        </p>
+        <div class="text-center mt-4">
+          <img
+            src="images/image.png"
+            class="rounded-circle img-fluid wiggle"
+            alt="Profile Picture"
+            style="width: 150px; height: 150px"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Biodata Card -->
+    <div class="container py-5" id="biodata">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white text-center">
+              <h2>Biodata</h2>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Full Name: Muhammad Dzaky Fauzan
+                </li>
+                <li class="list-group-item">
+                  Date of Birth: November 20, 2006
+                </li>
+                <li class="list-group-item">
+                  Address: Kosan Pak Ade, Desa Sukamakmur
+                </li>
+                <li class="list-group-item">Phone: +62 8123456789</li>
+                <li class="list-group-item">
+                  Email: muhammad.dzaky@gmail.com
+                </li>
+              </ul>
+            </div>
+
+            <!-- Modal Trigger -->
+            <div class="container py-4 card-footer text-center">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Contact me
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Kirim pesan via WhatsApp
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="wa-form">
+                      <div class="mb-3">
+                        <label for="sender-name" class="col-form-label"
+                          >Pengirim:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="sender-name"
+                          placeholder="Nama Anda"
+                          required
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="message-text" class="col-form-label"
+                          >Pesan:</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="message-text"
+                          rows="3"
+                          placeholder="Tulis pesan Anda"
+                          required
+                        ></textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="button" id="send-wa" class="btn btn-primary">
+                      Send message
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- WhatsApp message sending -->
+            <script>
+              const WA_PHONE = "6285161987474";
+              document.addEventListener("DOMContentLoaded", function () {
+                const sendBtn = document.getElementById("send-wa");
+                const nameInput = document.getElementById("sender-name");
+                const msgInput = document.getElementById("message-text");
+                const form = document.getElementById("wa-form");
+
+                sendBtn.addEventListener("click", function () {
+                  if (!nameInput.value.trim() || !msgInput.value.trim()) {
+                    nameInput.reportValidity();
+                    msgInput.reportValidity();
+                    return;
+                  }
+                  const text = `Halo! saya ${nameInput.value.trim()}\n\nPesan: ${msgInput.value.trim()}`;
+                  const encoded = encodeURIComponent(text);
+                  const url = `https://wa.me/${WA_PHONE}?text=${encoded}`;
+                  window.open(url, "_blank");
+                  const modalEl = document.getElementById("exampleModal");
+                  const modal =
+                    bootstrap.Modal.getInstance(modalEl) ||
+                    new bootstrap.Modal(modalEl);
+                  modal.hide();
+                  form.reset();
+                });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+      <p class="mb-0">
+        &copy; 2025 Muhammad Dzaky Fauzan | All Rights Reserved
+      </p>
+    </footer>
+
+    <script
+      src="js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

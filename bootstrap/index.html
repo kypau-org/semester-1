@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semester 1 Projects</title>
+
+  <style>
+    * {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background: linear-gradient(135deg, #1e1e2f, #2c3e50);
+color: white;
+padding: 20px;
+}
+
+h1 {
+font-size: 2.5rem;
+margin-bottom: 40px;
+text-align: center;
+color: #f1f1f1;
+letter-spacing: 1px;
+}
+
+.container {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+width: 100%;
+max-width: 900px;
+}
+
+.card {
+background: rgba(255, 255, 255, 0.1);
+padding: 30px 20px;
+border-radius: 15px;
+text-align: center;
+transition: all 0.3s ease;
+backdrop-filter: blur(8px);
+}
+
+.card:hover {
+transform: translateY(-10px);
+background: rgba(255, 255, 255, 0.2);
+}
+
+.card a {
+display: inline-block;
+margin-top: 15px;
+padding: 10px 20px;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+color: white;
+background: #3498db;
+transition: 0.3s;
+}
+
+.card a:hover {
+background: #217dbb;
+}
+
+footer {
+margin-top: 50px;
+font-size: 0.9rem;
+color: #bbb;
+}
+
+.final-card {
+  grid-column: 1 / -1; /* biar melebar penuh satu baris */
+}
+
+  </style>
+</head>
+<body>
+
+  <h1>Bootstrap Projects</h1>
+  <div class="container">
+    <div class="card">
+      <h2>Mini Project 1</h2>
+      <p>Membuat Biodata Card Bootstrap</p>
+      <a href="mini-project-1/index.html">Lihat Project</a>
+    </div>
+    <div class="card">
+      <h2>Mini Project 2</h2>
+      <p>Membuat Halaman Galeri Foto Responsive</p>
+      <a href="mini-project-2/index.html">Lihat Project</a>
+    </div>
+    <div class="card">
+      <h2>Mini Project 3</h2>
+      <p>Membuat Halaman Profil + Navbar</p>
+      <a href="mini-project-3/index.html">Lihat Project</a>
+    </div>
+    <div class="card">
+      <h2>Mini Project 4</h2>
+      <p>Membuat Form Kontak Bootstrap</p>
+      <a href="mini-project-4/index.html">Lihat Project</a>
+    </div>
+    <div class="card">
+      <h2>Mini Project 5</h2>
+      <p>Membuat Halaman Portfolio dengan Modal</p>
+      <a href="mini-project-5/index.html">Lihat Project</a>
+    </div>
+    <div class="card">
+      <h2>Mini Project 6</h2>
+      <p>Membuat Landing Page Produk/Portfolio</p>
+      <a href="mini-project-6/index.html">Lihat Project</a>
+    </div>
+    <div class="card final-card">
+      <h2>Final Project</h2>
+      <p>Membuat Website Portfolio Bootstrap</p>
+      <a href="final-project/index.html">Lihat Project</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Muhammad Dzaky Fauzan | Dibuat dengan ❤️
+  </footer>
+  
+</body>
+</html>
