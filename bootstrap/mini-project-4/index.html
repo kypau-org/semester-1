@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Kontak - Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="scss/main.css">
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-body p-4">
+      <h3 class="card-title mb-3 text-center">Kontak Kami</h3>
+      <p class="text-muted text-center mb-4">Isi form di bawah jika ingin menghubungi kami.</p>
+
+      <form id="contactForm" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="name" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Masukkan nama lengkap" required minlength="2">
+          <div class="invalid-feedback">
+            Nama wajib diisi (minimal 2 karakter).
+          </div>
+          <div class="valid-feedback">
+            Nama terlihat baik.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="nama@domain.com" required>
+          <div class="invalid-feedback">
+            Mohon masukkan alamat email yang valid.
+          </div>
+          <div class="valid-feedback">
+            Email valid.
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="form-label">Pesan</label>
+          <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tulis pesan Anda..." required minlength="5"></textarea>
+          <div class="invalid-feedback">
+            Pesan wajib diisi (minimal 5 karakter).
+          </div>
+          <div class="valid-feedback">
+            Siap dikirim.
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Validasi bawaan + visual feedback (on submit)
+    (function () {
+      'use strict'
+
+      const form = document.getElementById('contactForm');
+
+      // On form submit: tampilkan validasi bootstrap
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault(); // Hapus jika mau submit ke server nyata
+          // contoh aksi setelah valid: tampilkan pesan sukses (atau kirim via fetch/ajax)
+          alert('Pesan siap dikirim — semua field valid!');
+          form.reset();
+          form.classList.remove('was-validated');
+          // hapus kelas valid/invalid manual
+          form.querySelectorAll('.form-control').forEach(input => {
+            input.classList.remove('is-valid', 'is-invalid');
+          });
+          return;
+        }
+        form.classList.add('was-validated');
+      }, false);
+
+      // Real-time validation: ubah class saat user mengetik
+      const inputs = form.querySelectorAll('.form-control');
+      inputs.forEach(input => {
+        // validate on input and blur
+        ['input', 'blur'].forEach(evt => {
+          input.addEventListener(evt, () => {
+            if (input.checkValidity()) {
+              input.classList.remove('is-invalid');
+              input.classList.add('is-valid');
+            } else {
+              input.classList.remove('is-valid');
+              // show invalid only after user typed something or field lost focus
+              if (input.value.length > 0 || evt === 'blur') {
+                input.classList.add('is-invalid');
+              } else {
+                input.classList.remove('is-invalid');
+              }
+            }
+          });
+        });
+      });
+
+    })();
+  </script>
+</body>
+</html>

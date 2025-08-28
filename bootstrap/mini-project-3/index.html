@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Biodata Card</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <style>
+        nav > div > a > img {
+    height: 40px;
+}
+    </style>
+    
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <img src="images/nav.png" alt="Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#biodata">Biodata</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-light text-dark text-center py-5">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Welcome to My Profile</h1>
+        <p class="lead">
+          Hello! my name is <span class="text-primary">Muhammad Dzaky Fauzan</span><br />I am a beginner web
+          developer.
+        </p>
+        <div class="text-center mt-4">
+          <img
+            src="images/image.png"
+            class="rounded-circle img-fluid wiggle"
+            alt="Profile Picture"
+            style="width: 150px; height: 150px"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Biodata Card -->
+    <div class="container py-5" id="biodata">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow-lg">
+            <div class="card-header bg-primary text-white text-center">
+              <h2>Biodata</h2>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Full Name: Muhammad Dzaky Fauzan
+                </li>
+                <li class="list-group-item">
+                  Date of Birth: November 20, 2006
+                </li>
+                <li class="list-group-item">
+                  Address: Kosan Pak Ade, Desa Sukamakmur
+                </li>
+                <li class="list-group-item">Phone: +62 8123456789</li>
+                <li class="list-group-item">
+                  Email: muhammad.dzaky@gmail.com
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+      <p class="mb-0">
+        &copy; 2025 Muhammad Dzaky Fauzan | All Rights Reserved
+      </p>
+    </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+  </body>
+</html>
